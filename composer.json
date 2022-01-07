@@ -1,0 +1,11 @@
+{
+    "name": "cg1/ninja-pizza-project",
+    "description": "Ninja Pizza Project",
+    "authors": [
+        {
+            "name": "Juraia Pinas",
+            "email": "byenna21@gmail.com"
+        }
+    ],
+    "require": {}
+}
