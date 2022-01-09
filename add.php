@@ -1,10 +1,10 @@
 <?php 
-
-$errors = array('email' => ' ', 'title' => ' ', 'ingredients' => ' ');
+$email = $title = $ingredients = '';
+$errors = array('email' => '', 'title' => '', 'ingredients' => '');
 
 	if(isset($_POST['submit'])){
 
-		$email = $title = $ingredients = '';
+		
 		
 		// check email
 		if(empty($_POST['email'])){
@@ -36,6 +36,12 @@ $errors = array('email' => ' ', 'title' => ' ', 'ingredients' => ' ');
 			}
 		}
 
+        if(array_filter($errors)) {
+            echo "there are errors";
+        } else {
+            header('Location: index.php');
+        }
+
 	} // end POST check
 
 ?>
@@ -49,13 +55,13 @@ $errors = array('email' => ' ', 'title' => ' ', 'ingredients' => ' ');
 		<h4 class="center">Add a Pizza</h4>
 		<form class="white" action="add.php" method="POST">
 			<label>Your Email</label>
-			<input type="text" name="email">
+			<input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>">
             <div class="red-text"><?php echo $errors['email'] ?></div>
 			<label>Pizza Title</label>
-			<input type="text" name="title">
+			<input type="text" name="title" value="<?php echo htmlspecialchars($title) ?>">
             <div class="red-text"><?php echo $errors['title'] ?></div>
 			<label>Ingredients (comma separated)</label>
-			<input type="text" name="ingredients">
+			<input type="text" name="ingredients" value="<?php echo htmlspecialchars($ingredients) ?>">
             <div class="red-text"><?php echo $errors['ingredients'] ?></div>
 			<div class="center">
 				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
