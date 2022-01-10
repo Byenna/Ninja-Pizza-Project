@@ -50,15 +50,15 @@ mysqli_close($conn);
                             </div>
                         </div>
                     </div>
-                <div>
+                
 
             <?php endforeach; ?>
 
-            <?php if(count($pizzas) >= 2):?>
+            <!-- <?php if(count($pizzas) >= 2):?>
                 <p>There are more than 3 pizzas</p>
             <?php else:?>
                 <p>There are less than 3 pizzas</p>
-            <?php endif;?>
+            <?php endif;?> -->
 
              
         </div>
